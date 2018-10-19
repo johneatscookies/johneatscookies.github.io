@@ -1,0 +1,54 @@
+<!--MOBILE-->
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Cerritos HS Science</title>
+
+<body>
+  <div class="mobile-container">
+
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+      <a href="#home" class="active">Cerritos High School Science Olympiad</a>
+      <div id="myLinks">
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <!--<div style="padding-left:16px">
+      <p>testing</p>
+    </div>-->
+
+    <div class="parallax" id="index"></div>
+    <div style="height:100%;background-color:white;font-size:36px;text-align:center; z-index:9; position: relative">
+    </div>
+
+    <!-- End smartphone / tablet look -->
+  </div>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+  </script>
+</body>
+
+</html>

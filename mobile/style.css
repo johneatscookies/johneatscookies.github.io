@@ -1,0 +1,71 @@
+/*MOBILE
+#A5A5AF
+#015249
+#77C9D4
+#57BC90
+*/
+.mobile-container {
+  max-width: 720px;
+  height: 1080px;
+  margin: auto;
+  background-color: #57BC90;
+  color: white;
+  border-radius: 10px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #A5A5AF;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  color: white;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.topnav a.icon:hover {
+  background-color: #77C9D4;
+}
+
+.topnav a:hover {
+  background-color: #77C9D4;
+  color: white;
+}
+
+.active {
+  background-color: #A5A5AF;
+  color: white;
+}
+
+.parallax {
+  /* The image used */
+  /*background-image: url("https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/34049794_605816629784687_7384822942619664384_o.jpg?_nc_cat=0&oh=9e341ba66fb4ad8b4d9ee39b3bd7d26d&oe=5BF5C47B");*/
+  /* Full height */
+  height: 100%
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+}
+
+#index {
+  background-image: url("../IMG_1063.jpg");
+  background-position: 25% 40%;
+  background-size: 100%;
+}
