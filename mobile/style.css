@@ -7,8 +7,11 @@
 .mobile-container {
   max-width: 720px;
   height: 1080px;
+  width: 100%;
   margin: auto;
-  background-color: #57BC90;
+  /*background-color: #57BC90;*/
+  background-image: url("../IMG_1063.jpg");
+  background-size: 100%;
   color: white;
   border-radius: 10px;
 }
@@ -64,8 +67,15 @@
   z-index: 0;
 }
 
+.mainpop {
+  background-color: rgba(0, 0, 0, .3);
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
 #index {
-  background-image: url("../IMG_1063.jpg");
+  background-image: url("../IMG_1072.jpg");
   background-position: 25% 40%;
   background-size: 100%;
 }
