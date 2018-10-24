@@ -1,4 +1,3 @@
-<!--MOBILE-->
 <!DOCTYPE html>
 <html>
 
@@ -13,31 +12,37 @@
 <title>Cerritos HS Science</title>
 
 <body>
-  <div class="mobile-container">
 
-    <!-- Top Navigation Menu -->
-    <div class="topnav">
-      <a href="index.html" class="active">Cerritos High School Science Olympiad</a>
-      <div id="myLinks">
-        <a href="about.html">About</a>
-        <a href="invitational.html">Invitational</a>
-        <a href="events.html">Events</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="index.html">HOME</a>
+      <div class="current"><a href="about.html" style="">ABOUT</a></div>
+      <a href="sof.html" style="">SOF</a>
+      <a href="invitational.html">CERRITOS INVITATIONAL</a>
+      <a href="events.html">EVENTS</a>
+      <a href="contact.html">CONTACT</a>
     </div>
-    <div class="bodyheader">
-        <table border=0 height="100%" width="100%" style="text-align:left; padding: 40px 90px; background-image: url(../IMG_1047.jpg); background-repeat:no-repeat; background-size:cover;">
-            <td width="50%">
-                <div style="text-align:left; color:white !important; font-size:30px">ABOUT</div>
-                <div style="color:#77C9D4; text-align:left;font-size:40px"><strong>CHS SCIOLY</strong></div>
-            </td>
-            <td width="50%">
-                <div style="padding:40px; text-align:left; color:white !important; font-size:18px; line-height:1.5"></div>
-            </td>
-        </table>
+  </div>
+
+  <!-- Navigation Menu -->
+  <div class="navbar" style="z-index:0">
+    <!--<a href="#invitational">Cerritos Invitational</a>-->
+    <a><span style="font-size:50px;cursor:pointer;color:white" onclick="openNav()">&#x2630;</a>
+    <div class="nav2"><a href=""><img src="http://homeschoolravenscom.businesscatalyst.com/images/pasted%20image%20450x2002.png" width="20%" height="20%"></a></div>
+    <div class="id">ABOUT</div>
+  </div>
+  <div class="bodyheader">
+    <table border=0 height="600px" width="100%" style="text-align:left; padding: 40px 90px; background-image: url(IMG_1047.jpg); background-repeat:no-repeat; background-size:cover;">
+      <td width="50%">
+        <div style="text-align:left; color:white !important; font-size:30px">ABOUT</div>
+        <div style="color:#77C9D4; text-align:left;font-size:40px"><strong>CHS SCIOLY</strong></div>
+      </td>
+      <td width="50%">
+        <div style="padding:40px; text-align:left; color:white !important; font-size:18px; line-height:1.5"></div>
+      </td>
+    </table>
+
   </div>
   <div class="bodytext">
     Cerritos High School SOF has now competed in Science Olympiad for over 4 years, winnning regional titles and reaching state.
@@ -46,8 +51,8 @@
     <table>
       <tr>
         <table cellpadding="1">
-          <td align="center"><img src="../chsdons.gif" style="width:12%;"></td>
-          <!--<td align="left"><img src="../soflogo.png" style="width:35%;"></td>-->
+          <td align="right"><img src="chsdons.gif" style="width:12%;"></td>
+          <td align="left"><img src="soflogo.png" style="width:27%;"></td>
         </table>
       </tr>
       <tr>
@@ -57,27 +62,90 @@
     <hr>
     <table>
       <td>
-        <img src="../IMG_9525.jpg">
+        <img src="IMG_9525.jpg">
       </td>
       <td>
-        <img src="../IMG_1072.jpg">
+        <img src="IMG_1072.jpg">
       </td>
       <td>
-        <img src="../IMG_0754.jpg">
+        <img src="IMG_0754.jpg">
       </td>
     </table>
   </div>
-    <!-- End smartphone / tablet look -->
+
+  <div style="height:100%;font-size:36px;text-align:center; z-index:9; position: relative">
+    <table style="width:100%;" cellspacing=0>
+      <div>
+        <tr style="height:50%; background-color:rgba(165,165,175,0.5)" class="footertop">
+          <td colspan=2>
+            <div class="footertop">
+              <h5><div id="label">UPCOMING</div></h5>
+              <h3><strong>CERRITOS SCIOLY INVITATIONAL</strong></h3>
+              <div class="button">
+                <h1><i><a href="https://docs.google.com/forms/d/e/1FAIpQLSexd1JW3PRxpnk_Pw2DSaFB5-3kTy89bvJzhznXeyGU-kcKOA/viewform" target="_blank">Register now</a></i></h1>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr style="height:50%">
+          <td style="background-color:#57BC90" width="50%">
+            <center><a href="https://www.soinc.org/"><img src="http://miscioly.org/wp-content/uploads/SO_Logo_White.gif" width="60%" height="60%" style="padding-top:80px"></a></center>
+            <a href="https://www.facebook.com/groups/136944450484472/?ref=bookmarks" class="fa fa-facebook"></a>
+            <a href="https://classroom.google.com/u/1/c/MjgyMDc1ODgyM1pa" class="fa fa-google"></a>
+          </td>
+          <td width="50%">
+            <table style="width:100%;text-align:left">
+              <tr>
+                <button onclick="totop()" id="scrollbtn" title="Top of the page"><strong>&#10514;</strong></button>
+              </tr>
+              <tr>
+                <div style="color:white">asdf</div>
+              </tr>
+              <tr>
+                <td>
+                  <div class="bottomnav"><a href="index.html" style="color:#77C9D4">HOME</a></div>
+                </td>
+                <td>
+                  <div class="bottomnav"><a href="https://docs.google.com/forms/d/e/1FAIpQLSexd1JW3PRxpnk_Pw2DSaFB5-3kTy89bvJzhznXeyGU-kcKOA/viewform" target="_blank">REGISTER</a></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="bottomnav"><a href="events.html">EVENTS</a></div>
+                </td>
+                <td>
+                  <div class="bottomnav"><a href="contact.html">CONTACT</a></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+    </table>
   </div>
 
   <script>
-    function myFunction() {
-      var x = document.getElementById("myLinks");
-      if (x.style.display === "block") {
-        x.style.display = "none";
+    function openNav() {
+      document.getElementById("myNav").style.display = "block";
+    }
+
+    function closeNav() {
+      document.getElementById("myNav").style.display = "none";
+    }
+    window.onscroll = function() {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+        document.getElementByClassName("navbar").style.display = "none";
       } else {
-        x.style.display = "block";
+        document.getElementByClassName("navbar").style.display = "block";
       }
+    }
+
+    function totop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     }
   </script>
 </body>

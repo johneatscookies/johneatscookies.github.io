@@ -5,7 +5,6 @@
 #57BC90
 */
 .mobile-container {
-  max-width: 100%px;
   height: 1080px;
   width: 100%;
   margin: auto;
@@ -22,6 +21,7 @@
   background-color: #A5A5AF;
   position: relative;
   z-index: 1000;
+  width:100%;
 }
 
 .topnav #myLinks {
@@ -77,12 +77,12 @@
   left: 20%;
   padding:;
   position: absolute;
-  top: 15%;
+  top: 30%;
   margin: auto;
   text-align: center;
   background: rgba(0, 0, 0, 0.6);
   color: white;
-  font-size: 30px;
+  font-size: 15px;
   line-height: 1.5;
   z-index: 4;
   transition: 1s;
@@ -90,21 +90,22 @@
 
 #index {
   background-image: url("../IMG_1072.jpg");
-  background-position: 25% 40%;
+  background-position: 25% 0%;
   background-size: 100%;
+  background-repeat: no-repeat;
 }
 #mainpopbtn {
     position: absolute;
     margin: 0 auto;
-    top: 38%;
-    left: 42%;
-    width: 16%;
-    height: 50px;
+    top: 50%;
+    left: 34%;
+    width: 32%;
+    height: 30px;
     background-color: white;
     text-align: center;
     background-color: #77C9D4;
     color: white;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 1.5;
     z-index: 0;
     display: block;
