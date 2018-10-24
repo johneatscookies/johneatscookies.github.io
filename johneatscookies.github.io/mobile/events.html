@@ -1,0 +1,65 @@
+
+<!--MOBILE-->
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Cerritos HS Science</title>
+
+<body>
+  <div class="mobile-container">
+
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+      <a href="index.html" class="active">Cerritos High School Science Olympiad</a>
+      <div id="myLinks">
+        <a href="about.html">About</a>
+        <a href="invitational.html">Invitational</a>
+        <a href="events.html">Events</a>
+        <a href="contacts.html">Contact</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div class="bodyheader">
+    <table border=0 height="100%" width="100%" style="text-align:left; padding: 40px 90px; background-image: url(../114212.jpg); background-repeat:no-repeat; background-size:cover;">
+      <td width="50%">
+        <div style="text-align:left; color:white !important; font-size:30px">UPCOMING</div>
+        <div style="color:#77C9D4; text-align:left;font-size:40px"><strong>EVENTS</strong></div>
+      </td>
+      <td width="50%">
+        <div style="padding:40px; text-align:left; color:white !important; font-size:18px; line-height:1.5"></div>
+      </td>
+    </table>
+  </div>
+  <div>
+    <div data-tockify-component="calendar" data-tockify-calendar="john.li"></div>
+  </div>
+  <script data-cfasync="false" data-tockify-script="embed" src="https://public.tockify.com/browser/embed.js"></script>
+  <!--<iframe src="https://calendar.google.com/calendar/embed?src=myabcusd.org_19o8vsm6v9clsspqdvs7okjeb8%40group.calendar.google.com&ctz=America%2FLos_Angeles" style="border: 0" width="100%" height="800" frameborder="0" scrolling="no"></iframe>-->
+
+
+    <!-- End smartphone / tablet look -->
+  </div>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+  </script>
+</body>
+
+</html>
