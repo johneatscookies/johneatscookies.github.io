@@ -129,17 +129,19 @@
     background-position: center;
   }
 .bodyheader table {
+    width: inherit;
     text-align: left;
     padding-left: 2 0px;
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
+    background-size: cover;
+    table-layout: fixed;
   }
     .bodytext {
-    padding: 60px;
+    padding: 20px;
     /*height:1000px;*/
     background-color: white;
-    font-size: 30px;
+    font-size: 15px;
     z-index: 1;
     color:black;
   }
@@ -167,4 +169,7 @@
   }
 #index {
   background-image: url("../IMG_1063.jpg");
+}
+#about {
+  /*background-image: url("../IMG_1047.jpg");*/
 }
