@@ -188,7 +188,6 @@
   }
 
   .overlay a:active {
-    text-decoration: line-through;
     color: #77C9D4;
   }
 
@@ -430,7 +429,7 @@
   }
 
   .current {
-    text-decoration: line-through;
+    /*-decoration: line-through;*/
     color: #77C9D4 !important;
   }
 
