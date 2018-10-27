@@ -94,7 +94,7 @@
     width: 100%;
     display: block;
     z-index: 7;
-    height: 8%;
+    height: 70px;
     background-color: rgba(87, 188, 144, 1);
   }
 
@@ -121,7 +121,7 @@
     font-size: 16px;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 0px 12px;
     text-decoration: none;
     transition: 0.3s;
     z-index: 1;
@@ -229,7 +229,7 @@
   #mainpopbtn {
     position: fixed;
     margin: 0 auto;
-    top: 38%;
+    top: 50%;
     left: 42%;
     width: 16%;
     height: 60px;
@@ -250,8 +250,7 @@
     color: white;
   }
 
-  #mainpopbtn:hover
-    background-color: #57BC90;
+  #mainpopbtn:hover background-color: #57BC90;
   }
 
   #footertop {
@@ -443,7 +442,7 @@
   .column {
     float: left;
     width: 33.33%;
-    padding: 100px;
+    padding: 50px;
     height: 300px;
     /* Should be removed. Only for demonstration */
   }
