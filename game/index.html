@@ -1,0 +1,440 @@
+<html>
+<style>
+@bg-color: #777;
+@hud-bg-color: #222;
+@hud-color: #eee;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: @bg-color;
+  background-image: radial-gradient(#777, #222);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-menu,
+.final-score,
+.rules-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, .7);
+  display: none;
+}
+
+.rules-container.visible,
+.main-menu.visible,
+.final-score.visible {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.main-menu {
+  h1 {
+    color: #fff;
+    font-size: 80px;
+    font-family: 'Amatic SC', cursive;
+    cursor: default;
+    text-shadow: 0 0 10px orange;
+  }
+}
+
+.menu-item {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-size: 50px;
+  line-height: 1.5;
+  font-family: 'Amatic SC', cursive;
+  cursor: pointer;
+  &::before {
+    content: '🎃';
+    position: absolute;
+    right: 100%;
+    margin: 0 20px 0 0;
+    visibility: hidden;
+  }
+  
+  &:hover {
+    text-shadow: 0 0 10px orange;
+    &::before {
+      visibility: visible;
+    }
+  }
+}
+
+.final-score,
+.rules-container {
+  color: #fff;
+  font-family: 'Amatic SC', cursive;
+  h2,
+  .final-result {
+    margin: 0 0 40px;
+    line-height: 1;
+    font-size: 70px;
+  }
+  
+  p {
+    margin: 0 0 15px;
+    line-height: 1.5;
+    width: 70%;
+    font-size: 30px;
+  }
+  
+  span {
+    display: inline-block;
+    margin: 0 0 10px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+}
+
+.hud {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: @hud-bg-color;
+  background-image: linear-gradient(#222, #444, #222);
+  color: @hud-color;
+  padding: 5px;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.seconds {
+  display: inline-block;
+  width: 30px;
+}
+
+.town {
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  div {
+    font-size: 85px;
+  }
+}
+
+.house {
+  position: relative;
+  cursor: pointer;
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  &::before {
+    content: attr(data-content);
+    font-size: 0px;
+    text-shadow: 0px 0px 24px lightblue;
+    transition: font-size .2s ease-in-out;
+  }
+  
+  &::after {
+    content: attr(data-score);
+    font-size: 30px;
+    color: lime;
+    visibility: hidden;
+    opacity: 1;
+    transition: opacity .5s ease-in-out, top 1s ease-in-out;
+  }
+  
+  &.active {
+    &::before {
+      font-size: 55px;
+    }
+  }
+  
+  &.click {
+    &::after {
+      visibility: visible;
+      opacity: 0;
+      top: -160px;
+    }
+    &::before {
+      font-size: 0px;
+    }
+  }
+}
+</style>
+<div class="hud">
+  <div class="score">Score: <span class="points"></span></div>
+  <div class="time">Time: <span class="seconds"></span></div>
+</div>
+<div class="main-menu visible">
+  <h1>Trick or treat</h1>
+  <a class="menu-item new-game">New Game</a>
+  <a class="menu-item rules">Rules</a>
+  <a class="menu-item quit" href="https://codepen.io/visualcomposer">Quit</a>
+</div>
+<div class="rules-container">
+  <h2>Rules</h2>
+  <p>Trick or treat houses.</p><p>Click on the candies when they appear to collect points, avoid clicking on monsters, they will take away your points.</p><p>Remember you got only 30 seconds. Good luck!</p>
+  <span class="menu-item return-to-main">Main Menu</span>
+</div>
+<div class="main">
+  <div class="town">
+    <div class="row trees">
+      <div class="tree">🌳</div>
+      <div class="tree">🌳</div>
+      <div class="tree">🌳</div>
+      <div class="tree">🌳</div>
+      <div class="tree">🌳</div>
+      <div class="tree">🌳</div>
+      <div class="tree">🌳</div>
+    </div>
+    <div class="row houses">
+      <div class="tree">🌳</div>
+      <div class="house">🏠</div>
+      <div class="house">🏠</div>
+      <div class="house">🏠</div>
+      <div class="house">🏠</div>
+      <div class="house">🏠</div>
+      <div class="tree">🌳</div>
+    </div>
+    <div class="row houses">
+      <div class="tree">🌳</div>
+      <div class="house">🏠</div>
+      <div class="house">🏠</div>
+      <div class="house">🏠</div>
+      <div class="house">🏠</div>
+      <div class="house">🏠</div>
+      <div class="tree">🌳</div>
+    </div>
+    <div class="row houses">
+      <div class="tree">🌳</div>
+      <div class="house">🏠</div>
+      <div class="house">🏠</div>
+      <div class="house">🏠</div>
+      <div class="house">🏠</div>
+      <div class="house">🏠</div>
+      <div class="tree">🌳</div>
+    </div>
+    <div class="row houses">
+      <div class="tree">🌳</div>
+      <div class="house">🏠</div>
+      <div class="house">🏠</div>
+      <div class="house">🏠</div>
+      <div class="house">🏠</div>
+      <div class="house">🏠</div>
+      <div class="tree">🌳</div>
+    </div>
+    <div class="row trees">
+      <div class="tree">🌳</div>
+      <div class="tree">🌳</div>
+      <div class="tree">🌳</div>
+      <div class="tree">🌳</div>
+      <div class="tree">🌳</div>
+      <div class="tree">🌳</div>
+      <div class="tree">🌳</div>
+    </div>
+  </div>
+</div>
+<div class="final-score">
+  <h2>Your score is: <span class="final-result"></span></h2>
+  <span class="menu-item restart">Restart</span>
+  <span class="menu-item return-to-main">Main Menu</span>
+</div>
+<script>
+const houses = Array.from(document.querySelectorAll('.house'))
+const hudScorePoints = document.querySelector('.points')
+const hudTimeSeconds = document.querySelector('.seconds')
+const mainMenu = document.querySelector('.main-menu')
+const menuItems = Array.from(document.querySelectorAll('.menu-item'))
+const rules = document.querySelector('.rules-container')
+const finalScore = document.querySelector('.final-score')
+const finalResult = document.querySelector('.final-result')
+const restart = document.querySelector('.restart')
+const returnToMain = Array.from(document.querySelectorAll('.return-to-main'))
+
+const CONTENT = [
+  {
+    type: '🍭',
+    value: '+50'
+  },
+  {
+    type: '🍬',
+    value: '+100'
+  },
+  {
+    type: '🍫',
+    value: '+150'
+  },
+  {
+    type: '🍦',
+    value: '+200'
+  },
+  {
+    type: '🍩',
+    value: '+250'
+  },
+  {
+    type: '🍪',
+    value: '+300'
+  },
+  {
+    type: '👻',
+    value: '-250'
+  },
+  {
+    type: '🧟‍♂️',
+    value: '-500'
+  }
+]
+
+let SCORE = 0
+let TIMER = 30
+let generateTimeout = null
+let fadeTimeout = null
+let scoreTimeout = null
+let contentTimeout = null
+let timerInterval
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
+function getRandomArbitrary(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function handleClick() {
+  console.log(this)
+  if (this.classList.contains('active')) {
+    SCORE += parseInt(this.dataset.score)
+    this.classList.add('click')
+    this.classList.remove('active')
+    this.dataset.content = ''
+    hudScorePoints.textContent = SCORE
+    scoreTimeout = setTimeout(() => {
+      this.dataset.score = ''
+      this.classList.remove('click')
+      window.clearTimeout(scoreTimeout)
+      scoreTimeout = null
+    }, 300)
+  }
+}
+
+function resetValues () {
+  TIMER = 30
+  SCORE = 0
+  hudScorePoints.textContent = ''
+}
+
+function handleMenuClick () {
+  if (this.classList.contains('new-game')) {
+    mainMenu.classList.remove('visible')
+    start()
+  }
+  if (this.classList.contains('rules')) {
+    mainMenu.classList.remove('visible')
+    rules.classList.add('visible')
+  }
+  resetValues()
+}
+
+function handleReturnClick () {
+  this.parentElement.classList.remove('visible')
+  mainMenu.classList.add('visible')
+}
+
+function handleRestart () {
+  resetValues()
+  this.parentElement.classList.remove('visible')
+  start()
+}
+
+houses.forEach((house) => {
+  house.addEventListener('click', handleClick)
+})
+
+menuItems.forEach((item) => {
+  item.addEventListener('click', handleMenuClick)
+})
+
+returnToMain.forEach((control) => {
+  control.addEventListener('click', handleReturnClick)
+})
+
+restart.addEventListener('click', handleRestart)
+
+function generateContent () {
+  if (TIMER > 0) {
+    generateTimeout = setTimeout(() => {
+      const randHouse = getRandomArbitrary(0, houses.length)
+      if (!houses[randHouse].classList.contains('active')) {
+        const randContentValue = getRandomArbitrary(0, CONTENT.length)
+        const contentValue = CONTENT[randContentValue]
+        houses[randHouse].classList.add('active')
+        houses[randHouse].dataset.content = contentValue.type
+        houses[randHouse].dataset.score = contentValue.value
+        fadeTimeout = setTimeout(() => {
+          if (houses[randHouse].classList.contains('active')) {
+            houses[randHouse].classList.remove('active')
+            contentTimeout = setTimeout(() => {
+              houses[randHouse].dataset.content = ''
+              houses[randHouse].dataset.score = ''
+              window.clearTimeout(contentTimeout)
+              contentTimeout = null
+            }, 300)
+          }
+        }, 1900)
+      }
+      generateContent()
+    }, 300)
+  }
+}
+
+function start () {
+  generateContent()
+  timerInterval = setInterval(() => {
+    TIMER = TIMER - 1
+    hudTimeSeconds.textContent = `${TIMER}s`
+    if (TIMER === 0) {
+      window.clearInterval(timerInterval)
+      window.clearTimeout(generateTimeout)
+      window.clearTimeout(fadeTimeout)
+      generateTimeout = null
+      fadeTimeout = null
+      timerInterval = null
+      finalResult.textContent = SCORE
+      finalScore.classList.add('visible')
+      houses.forEach((house) => {
+        if (house.classList.contains('active')) {
+          house.classList.remove('active')
+          house.dataset.content = ''
+          house.dataset.score = ''
+        }
+      })
+    }
+  }, 1000)
+}
+</script>
+</html>
