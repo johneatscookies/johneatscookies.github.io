@@ -527,8 +527,7 @@ hr {
   height: 40px;
   line-height: 42px;
   display: block;
-  text-align: center;
-  float: right; }
+  text-align: center;}
 
 .game-explanation {
   margin-top: 50px; }
