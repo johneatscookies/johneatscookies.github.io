@@ -178,12 +178,17 @@ html {
 #about {
   /*background-image: url("../IMG_1047.jpg");*/
 }
-.column {
-  width: 100%;
-  float: center;
-  /* Should be removed. Only for demonstration */
-}
 
+.column {
+    margin: 10px 0;
+    padding:15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+}
+.column:hover {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
 .column .title {
   color: #015249;
   font-size: 25px;
