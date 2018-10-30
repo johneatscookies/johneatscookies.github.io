@@ -185,9 +185,10 @@ html {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
     transition: 0.3s;
     border-radius: 5px; /* 5px rounded corners */
+    background-color: #EFEFEF;
 }
 .column:hover {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5); 
 }
 .column .title {
   color: #015249;
