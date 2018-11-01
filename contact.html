@@ -67,8 +67,7 @@
     </div>
     <div class="column">
       <div class="title">CONTACT US</div>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd3KFNowUSUldvnFDEMkxlTGkR2EOOVyluDcL12zL1InPRx3A/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"
-          style="overflow:hidden">Loading...</iframe>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd3KFNowUSUldvnFDEMkxlTGkR2EOOVyluDcL12zL1InPRx3A/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" style="overflow:hidden">Loading...</iframe>
     </div>
     <div class="column">
       <div class="title">INFO</div>
@@ -83,6 +82,12 @@
   <div class="bodytext"></div>
 
   <script>
+    if (screen.width < 1080) {
+      window.location.href = "mobile/contact.html";
+    } else {
+      window.location.href = "/contact.html";
+    }
+
     function openNav() {
       document.getElementById("myNav").style.display = "block";
     }

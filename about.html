@@ -56,7 +56,7 @@
         </table>
       </tr>
       <tr>
-        <div style="text-align:center">CHS is a public high school located in Cerritos, CA. For more information, visit <a href = "https://cerritoshs.us">cerritoshs.us</a></div>
+        <div style="text-align:center">CHS is a public high school located in Cerritos, CA. For more information, visit <a href="https://cerritoshs.us">cerritoshs.us</a></div>
       </tr>
     </table>
     <hr>
@@ -79,7 +79,9 @@
         <tr style="height:50%; background-color:rgba(165,165,175,0.5)" class="footertop">
           <td colspan=2>
             <div class="footertop">
-              <h5><div id="label">UPCOMING</div></h5>
+              <h5>
+                <div id="label">UPCOMING</div>
+              </h5>
               <h3><strong>CERRITOS SCIOLY INVITATIONAL</strong></h3>
               <div class="button">
                 <h1><i><a href="https://docs.google.com/forms/d/e/1FAIpQLSexd1JW3PRxpnk_Pw2DSaFB5-3kTy89bvJzhznXeyGU-kcKOA/viewform" target="_blank">Register now</a></i></h1>
@@ -124,6 +126,12 @@
   </div>
 
   <script>
+    if (screen.width < 1080) {
+      window.location.href = "mobile/about.html";
+    } else {
+      window.location.href = "/about.html";
+    }
+
     function openNav() {
       document.getElementById("myNav").style.display = "block";
     }
