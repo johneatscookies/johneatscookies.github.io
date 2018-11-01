@@ -29,7 +29,7 @@
   <div class="navbar" style="z-index:10" id="navbar">
     <!--<a href="#invitational">Cerritos Invitational</a>-->
     <a><span style="font-size:50px;cursor:pointer;color:white;height:100%;width:50%" onclick="openNav()">&#x2630;</a>
-    <div class="nav2"><a href=""><img src="http://homeschoolravenscom.businesscatalyst.com/images/pasted%20image%20450x2002.png" width="20%" height="20%"></a></div>
+    <div class="nav2"><a href="https://soinc.org"><img src="http://homeschoolravenscom.businesscatalyst.com/images/pasted%20image%20450x2002.png" width="20%" height="20%"></a></div>
   </div>
   <div>
     <div id="mainpop">
@@ -51,7 +51,8 @@
     <table style="width:100%">
       <tr style="height:40px">
         <h5>
-          <div id="label">UPCOMING</div>
+          <div id="label">UPCOMING<div id="info"></div>
+          </div>
         </h5>
         <h3><strong>CERRITOS SCIOLY INVITATIONAL</strong></h3>
         <div class="button">
@@ -153,6 +154,85 @@
         document.getElementById("navbar").style.backgroundColor = "rgba(87, 188, 144, 0)";
       }
     }
+    var secret = "717968"; //god
+    var input = "";
+    var timer;
+    var mode = false;
+
+    $(document).keyup(function(e) {
+      //alert(e.which);
+      input += e.which;
+
+      clearTimeout(timer);
+      timer = setTimeout(function() {
+        input = "";
+      }, 200);
+
+      check_input();
+    });
+
+    function check_input() {
+      if (input == secret) {
+        //the secret code
+        window.location.href = "http://stackoverflow.com";
+        alert('GOD MODE');
+        window.location.href = "http://stackoverflow.com";
+      }
+    }
+
+    $(document).ready(function() {
+      setInterval(function() {
+        $('#info').html('Keystroke: ' + input);
+      }, 100);
+    });
+    (function($) {
+
+      var resetProgress,
+        cheatProgress = 0,
+        // An array of the keycodes for the code
+        code = [
+          // up up down down left right left right b a
+          38, 38, 40, 40, 37, 39, 37, 39, 66, 65
+        ],
+        // How much time to allow between keypresses
+        time = 500;
+
+      $(document).bind('keydown.konami', function(event) {
+
+        if (event.keyCode === code[cheatProgress]) {
+          clearTimeout(resetProgress);
+
+          if (cheatProgress === code.length - 1) {
+
+            $(document).trigger('cheat.konami');
+
+            cheatProgress = 0;
+
+          } else {
+
+            resetProgress = setTimeout(function() {
+              console.log('Progress reset.');
+              cheatProgress = 0;
+            }, time);
+
+            cheatProgress += 1;
+          }
+
+          console.log(event.keyCode);
+        }
+      });
+
+      $(document).bind('cheat.konami', function() {
+
+        $('body').css({
+            'background-color': 'hsl( 0, 50%, 50% )'
+          })
+          .children('h1')
+          .text('30 LIVES');
+
+      });
+
+    })(jQuery);
   </script>
 </body>
 
