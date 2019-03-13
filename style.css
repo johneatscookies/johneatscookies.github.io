@@ -655,6 +655,7 @@
     height: 400px;
     border: 1px solid #f1f1f1;
     perspective: 1000px;
+    z-index: -1000;
     /* Remove this if you don't want the 3D effect */
   }
 
@@ -693,4 +694,16 @@
     background-color: #77C9D4;
     color: white;
     transform: rotateX(180deg);
+  }
+
+
+
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
   }
