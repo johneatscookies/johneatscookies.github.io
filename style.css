@@ -70,7 +70,10 @@
     overflow: hidden;
   }
 
-  table {}
+  table {
+    width: 100%;
+    height: auto;
+}
 
   th {}
 
